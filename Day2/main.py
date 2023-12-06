@@ -4,8 +4,9 @@ def parse_set(set: str):
 		"green": 0,
 		"blue": 0
 	}
-	for cubes in set.split(','):	# ["count", "color"]
-		parsed_set[cubes[1:].split(" ")[1]] += int(cubes[1:].split(" ")[0])
+	for cubes in set.split(','):
+		value, color = cubes[1:].split(" ")
+		parsed_set[color] += int(value)
 	return parsed_set
 
 def parse_file(file: str):
